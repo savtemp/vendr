@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
     new Snack('https://images.unsplash.com/photo-1566496875470-68ada46a38c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHNuYWNrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60','Root Dew', 5.75)
   ]
   
+  /** @type {import("./Models/Snack.js").Snack[]} */
+  orders = []
 }
 
 
