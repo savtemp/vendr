@@ -4,7 +4,7 @@ import { snacksService } from "../Services/SnacksService.js";
 
 function _drawSnacks(){
     let snacks = ProxyState.snacks
-    console.log('drawing snacks', snacks);
+    // console.log('drawing snacks', snacks);
     let template = ''
     snacks.forEach(s => template += s.snackTemplate)
     document.getElementById('snacks').innerHTML = template
@@ -12,7 +12,11 @@ function _drawSnacks(){
 
 function _drawOrders(){
     let orders = ProxyState.orders
-    console.log('drawing orders', orders);
+    // console.log('drawing orders', orders);
+    let template = ''
+    orders.forEach(order => template += order.orderTemplate)
+    document.getElementById('orders').innerHTML = template
+    
 }
 
 
@@ -21,10 +25,9 @@ function _drawOrders(){
 
 export class SnacksController{
     constructor(){
-        console.log('Snacks Controller loaded');
+        // console.log('Snacks Controller loaded');
         _drawSnacks()
-        ProxyState.on('orders', _drawOrders)
-        // _orderSnack()
+        ProxyState.on('orders', _drawOrders())
     }
     orderSnack(selectedSnack){
         snacksService.orderSnack(selectedSnack)
